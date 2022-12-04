@@ -2,6 +2,9 @@ h1, h2, h3, h4, p {
     color: white;
 }
 
+.title {
+    text-align: center;
+}
 mat-icon {
     color: white;
 }

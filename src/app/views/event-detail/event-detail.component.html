@@ -2,15 +2,7 @@
 <div class="flex-container">
     <mat-card *ngIf="this.event">
         <img class="img-fluid" [src]="event.picture" alt="concert image">
-        <mat-card-actions class="action-container">
-            <mat-icon class="col-2 mx-4">favorite</mat-icon>
-            <span class="col-1">100</span>
-            <mat-icon class="col-2 mx-4">message</mat-icon>
-            <span class="col-1">40</span>
-            <mat-icon class="col-2 mx-2">send</mat-icon>
-            <mat-icon class="col-2 mx-3">more_horiz</mat-icon>
-        </mat-card-actions>
-        <mat-card-title>{{event.title}}</mat-card-title>
+        <mat-card-title><h1 class="title">{{event.title}}</h1></mat-card-title>
         <mat-card-content>
             <p>{{event.description}}</p>
             <a [href]="event.url">{{event.url}}</a>
@@ -21,11 +13,11 @@
             <h4>Location</h4>
             <h4>{{event.location}}</h4>
         </mat-card-content>
-        <mat-card-actions class="action-container">
+        <!-- <mat-card-actions class="action-container">
             <button (click)="clickShowGoing()">Show Going</button>
             <button (click)="clickShowComments()">Show Comments</button>
             <button (click)="clickRegister()">Register</button>
-        </mat-card-actions>
+        </mat-card-actions> -->
         <ng-container *ngIf="showGoing">
             <p *ngFor="let user of goingList">
                 {{user}}

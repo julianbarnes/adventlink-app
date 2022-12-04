@@ -1,0 +1,12 @@
+{
+  "dev": {
+    "configLevel": "project",
+    "useProfile": false,
+    "awsConfigFilePath": "/Users/julianbarnes/.amplify/awscloudformation/yw714o3opu"
+  },
+  "staging": {
+    "configLevel": "project",
+    "useProfile": false,
+    "awsConfigFilePath": "/Users/julianbarnes/.amplify/awscloudformation/rnp9LhnEwN"
+  }
+}

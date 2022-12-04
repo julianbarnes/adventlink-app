@@ -1,0 +1,58 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-adventlinkapp-staging-204815-authRole",
+      "UnauthRoleArn": "arn:aws:iam::150489438901:role/amplify-adventlinkapp-staging-204815-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::150489438901:role/amplify-adventlinkapp-staging-204815-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-adventlinkapp-staging-204815-deployment",
+      "UnauthRoleName": "amplify-adventlinkapp-staging-204815-unauthRole",
+      "StackName": "amplify-adventlinkapp-staging-204815",
+      "StackId": "arn:aws:cloudformation:us-east-1:150489438901:stack/amplify-adventlinkapp-staging-204815/b8a7dc90-7375-11ed-9a54-0e530a06c831",
+      "AmplifyAppId": "d3u8wg3yb2hxax"
+    }
+  },
+  "auth": {
+    "adventlinkapp2bf2f3ee": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-adventlinkapp-staging-204815-deployment/amplify-cfn-templates/auth/adventlinkapp2bf2f3ee-cloudformation-template.json",
+        "logicalId": "authadventlinkapp2bf2f3ee"
+      },
+      "lastPushTimeStamp": "2022-12-04T01:53:25.505Z",
+      "output": {
+        "UserPoolId": "us-east-1_Y4aBX9PtS",
+        "AppClientIDWeb": "5g5ek6c5g6dq9h7s37l7cq5qma",
+        "AppClientID": "384j97sbtpisa0pabrvbhru62c",
+        "IdentityPoolId": "us-east-1:00f24620-20cd-4df3-b5c3-731a9e0b1436",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:150489438901:userpool/us-east-1_Y4aBX9PtS",
+        "IdentityPoolName": "adventlinkapp2bf2f3ee_identitypool_2bf2f3ee__staging",
+        "UserPoolName": "adventlinkapp2bf2f3ee_userpool_2bf2f3ee"
+      },
+      "lastPushDirHash": "fQesgrpV4zPJA6jIGW1a7+CkXMU="
+    }
+  }
+}

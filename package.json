@@ -11,7 +11,7 @@
     "lint": "ng lint",
     "local": "npm update; ng serve --host 0.0.0.0 --disable-host-check",
     "e2e": "ng e2e",
-    "heroku-postbuild": "ng build --prod",
+    "heroku-postbuild": "ng build --configuration production",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
     "storybook": "npm run docs:json && start-storybook -p 6006",
     "build-storybook": "npm run docs:json && build-storybook"

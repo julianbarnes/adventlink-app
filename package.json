@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "nvm use 14.0.0; npm run build; node server.js",
+    "start": "npm run build; node server.js",
     "start:dev": "npm run build:dev; node server.js",
     "build": "npm i; ng build",
     "build:dev": "npm i; ng build --configuration=development",
@@ -11,7 +11,7 @@
     "lint": "ng lint",
     "local": "npm update; ng serve --host 0.0.0.0 --disable-host-check",
     "e2e": "ng e2e",
-    "heroku-postbuild": "ng build --configuration production",
+    "heroku-postbuild": "ng build --configuration production ",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
     "storybook": "npm run docs:json && start-storybook -p 6006",
     "build-storybook": "npm run docs:json && build-storybook"
@@ -31,12 +31,12 @@
     "jquery": "^3.6.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.12.0"
+    "zone.js": "~0.12.0",
+    "@angular/cli": "~15.0.2",
+    "@angular/compiler-cli": "^15.0.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^15.0.2",
-    "@angular/cli": "~15.0.2",
-    "@angular/compiler-cli": "^15.0.0",
     "@types/jasmine": "~4.3.0",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",

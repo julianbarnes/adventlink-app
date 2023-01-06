@@ -36,11 +36,20 @@ export class EventsBrowseComponent implements OnInit {
     })
 
     this.eventForm.controls['ageGroup'].valueChanges.subscribe((value) => {
-      this.filterEvents('ageGroup', value)
+      if(value === 'All') {
+        this.filterEvents()
+      }
+      else  {
+        this.filterEvents('ageGroup', value)
+      } 
     })
 
     this.eventForm.controls['category'].valueChanges.subscribe((value) => {
-      this.filterEvents('category', value)
+      if(value === 'All') {
+        this.filterEvents()
+      } else {
+        this.filterEvents('category', value)
+      }
     })
   }
 

@@ -25,10 +25,9 @@
     </button>
 
     <mat-chip-listbox aria-label="Fish selection">
-        <mat-chip-option>One fish</mat-chip-option>
-        <mat-chip-option>Two fish</mat-chip-option>
-        <mat-chip-option color="accent" selected>Accent fish</mat-chip-option>
-        <mat-chip-option color="warn">Warn fish</mat-chip-option>
+        <mat-chip-option *ngFor="let group of ['Social', 'Bible Study', 'Professional','Spiritual','Small Group']" [value]="group">
+            {{group}}
+        </mat-chip-option>
     </mat-chip-listbox>
     <ng-container *ngIf="!events || events.length === 0">
         <h1 class="no-events">No Upcoming Events</h1>

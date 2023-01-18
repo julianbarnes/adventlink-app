@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "npm run build; node server.js",
-    "start:dev": "npm run build:dev; node server.js",
+    "start:dev": "ng serve --configuration development",
     "build": "npm i --force; ng build",
     "build:dev": "npm i; ng build --configuration=development",
     "test": "ng test",

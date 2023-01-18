@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { EventsBrowseComponent } from './views/events-browse/events-browse.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EventsBrowseModule } from './views/events-browse/events-browse.module';
+import {MatChipsModule} from '@angular/material/chips';
 import { EventsService } from './shared/services/events-service';
 import { EventDetailComponent } from './views/event-detail/event-detail.component';
 import { RegisterComponent } from './views/register/register.component';
@@ -36,7 +37,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     ReactiveFormsModule,
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule,
+    MatNativeDateModule
   ],
   providers: [EventsService],
   bootstrap: [AppComponent]

@@ -16,6 +16,7 @@ import { CategoryBarComponent } from './category-bar/category-bar.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { TestComponent } from 'src/app/test/test.component';
+import { MatChipsModule } from '@angular/material/chips';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { TestComponent } from 'src/app/test/test.component';
     ReactiveFormsModule,
     MatIconModule,
     MatButtonModule,
-    SharedModule
+    SharedModule,
+    MatChipsModule
   ],
   exports: [MatCardModule]
 })

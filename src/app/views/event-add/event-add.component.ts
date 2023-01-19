@@ -26,6 +26,9 @@ export class EventAddComponent implements OnInit {
 
   save() {
     console.log(this.file)
+    //convert date to utc
+    this.eventForm.value['startDate'] = this.convertToUtc(this.eventForm.value['startDate']);
+    this.eventForm.value['endDate'] = this.convertToUtc(this.eventForm.value['endDate']);
     this.eventsService.addEvent(this.eventForm.value, this.file).subscribe((response) => {
       console.log(response)
       this.navigateToEvents()
@@ -45,4 +48,12 @@ export class EventAddComponent implements OnInit {
     this.router.navigate(['events']);
   }
 
+  /**
+   * @description takes in a EST Date and returns the date in UCT
+   * @returns Date
+   */
+  private convertToUtc(date: Date) {
+    let estDate = new Date(date)
+    return estDate.toUTCString()
+  }
 }

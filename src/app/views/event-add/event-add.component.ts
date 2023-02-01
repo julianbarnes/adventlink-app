@@ -5,7 +5,7 @@ import { EventsService } from 'src/app/shared/services/events-service';
 @Component({
   selector: 'app-event-add',
   templateUrl: './event-add.component.html',
-  styleUrls: ['./event-add.component.css']
+  styleUrls: ['./event-add.component.scss']
 })
 export class EventAddComponent implements OnInit {
   public eventForm: FormGroup

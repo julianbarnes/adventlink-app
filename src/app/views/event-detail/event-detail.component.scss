@@ -1,27 +1,28 @@
-h1, h2, h3, h4, p {
-    color: white;
-}
+.flex-container {
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
 
-.title {
-    text-align: center;
-}
-mat-icon {
-    color: white;
-}
+    h1, h2, h3, h4, p {
+        color: white;
+    }
+    
+    .title {
+        text-align: center;
+    }
 
-mat-card {
-    background-color: black;
-}
+    mat-icon {
+        color: white;
+    }
+    
+    mat-card {
+        background-color: black;
+    }
 
-.action-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    .action-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
 }
-
-/* .flex-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-} */

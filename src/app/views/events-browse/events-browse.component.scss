@@ -37,11 +37,12 @@ h1,h2,h3,h4, p {
   border-radius: 50%;
   display: flex;
   background-color: #4084C2;
-}
-.circle .icon {
-  margin: auto;
-  font-size: 2rem;
-  color: black;
+
+  .icon {
+    margin: auto;
+    font-size: 2rem;
+    color: black;
+  }
 }
 
 .box {
@@ -83,6 +84,7 @@ h1,h2,h3,h4, p {
 .no-events {
   height: 100vh;
 }
+
 .card {
   width: 20rem;
   height: auto;

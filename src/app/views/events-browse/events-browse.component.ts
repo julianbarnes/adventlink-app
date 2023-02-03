@@ -7,7 +7,7 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-events-browse',
   templateUrl: './events-browse.component.html',
-  styleUrls: ['./events-browse.component.css']
+  styleUrls: ['./events-browse.component.scss']
 })
 export class EventsBrowseComponent implements OnInit {
 

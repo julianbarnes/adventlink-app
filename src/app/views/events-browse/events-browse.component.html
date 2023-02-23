@@ -33,8 +33,8 @@
         <h1 class="no-events">No Upcoming Events</h1>
     </ng-container>
     <ng-container *ngIf="events">
-        <div class="events-container col-10">
-            <ng-container *ngIf="events.length > 0">
+        <ng-container *ngIf="events.length > 0">
+            <div class="events-container col-10">
                 <ng-container *ngFor="let event of events">
                     <mat-card  class="card col-12 my-5"
                     (click)="this.navigate(event)">
@@ -58,8 +58,8 @@
                         <button>Reject</button>
                     </ng-container>
                 </ng-container>
-            </ng-container>
-        </div>
+            </div>
+        </ng-container>
     </ng-container>
 
     <!-- <h1>Top Events</h1>

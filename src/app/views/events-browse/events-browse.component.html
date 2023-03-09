@@ -24,7 +24,7 @@
         <mat-icon>add</mat-icon>
     </button>
 
-    <mat-chip-listbox aria-label="Fish selection" novalidate [formGroup]="eventForm">
+    <mat-chip-listbox aria-label="Event selection" novalidate [formGroup]="eventForm">
         <mat-chip-option *ngFor="let group of ['Social', 'Bible Study', 'Professional','Spiritual','Small Group']" [value]="group">
             {{group}}
         </mat-chip-option>

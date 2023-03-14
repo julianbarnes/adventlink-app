@@ -24,7 +24,7 @@
         <mat-icon>add</mat-icon>
     </button>
 
-    <mat-chip-listbox aria-label="Fish selection" novalidate [formGroup]="eventForm">
+    <mat-chip-listbox aria-label="Event selection" novalidate [formGroup]="eventForm">
         <mat-chip-option *ngFor="let group of ['Social', 'Bible Study', 'Professional','Spiritual','Small Group']" [value]="group">
             {{group}}
         </mat-chip-option>
@@ -34,7 +34,12 @@
     </ng-container>
     <ng-container *ngIf="events">
         <div class="events-container col-10">
-            <ng-container *ngIf="events.length > 0">
+            <ng-container *ngFor="let link of links">
+                <a class="card" [href]="link.url">
+                    <img [src]="link.picture" alt="picture of organization">
+                </a>
+            </ng-container>
+            <!-- <ng-container *ngIf="events.length > 0">
                 <ng-container *ngFor="let event of events">
                     <mat-card  class="card col-12 my-5"
                     (click)="this.navigate(event)">
@@ -45,20 +50,15 @@
                             <ng-template #noPicture>
                                 <h1>{{event.title}}</h1>
                             </ng-template>
-                            <!-- <p>{{event.description}}</p> -->
                             <a [href]="event.url">{{event.url}}</a>
                         </mat-card-content>
-                        <!-- <mat-card-actions class="col-12">
-                            <button class="text-primary mx-auto" mat-button>LIKE</button>
-                            <button class="text-primary mx-auto" mat-button>SHARE</button>
-                        </mat-card-actions> -->
                     </mat-card>
                     <ng-container *ngIf="isAdmin">
                         <button>Approve</button>
                         <button>Reject</button>
                     </ng-container>
                 </ng-container>
-            </ng-container>
+            </ng-container> -->
         </div>
     </ng-container>
 

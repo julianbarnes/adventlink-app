@@ -18,7 +18,60 @@ export class EventsBrowseComponent implements OnInit {
   public categories: string[] = ['Bible Studies', 'Potluck','Community Development','Sports','Evangelistic','Social'];
   public isAdmin = false;
   public eventForm: FormGroup
-
+  public links = [
+    {
+      url: 'https://adventistbookcenter.com/',
+      picture: '../../../assets/images/abc.png'
+    },
+    {
+      url: 'https://www.adventistworld.org/',
+      picture: '../../../assets/images/adventist-world.png'
+    },
+    {
+      url: 'https://www.amazingfacts.org',
+      picture: '../../../assets/images/af.png'
+    },
+    {
+      url: 'https://www.adventistbiblicalresearch.org',
+      picture: '../../../assets/images/andrews.png'
+    },
+    {
+      url: 'https://www.news.adventist.org',
+      picture: '../../../assets/images/ann.png'
+    },
+    {
+      url: 'https://www.atsjats.org/',
+      picture: '../../../assets/images/astr.png'
+    },
+    {
+      url: 'https://www.audioverse.org/',
+      picture: '../../../assets/images/audio-verse.png'
+    },
+    {
+      url: 'https://www.awr.org/',
+      picture: '../../../assets/images/awr.png'
+    },
+    {
+      url: 'https://www.whiteestate.org/',
+      picture: '../../../assets/images/egw.png'
+    },
+    {
+      url: 'https://adventistbookcenter.com/',
+      picture: '../../../assets/images/fft.png'
+    },
+    {
+      url: 'https://adventistbookcenter.com/',
+      picture: '../../../assets/images/glow.png'
+    },
+    {
+      url: 'https://adventistbookcenter.com/',
+      picture: '../../../assets/images/liberty.png'
+    },
+    {
+      url: 'https://adventistbookcenter.com/',
+      picture: '../../../assets/images/ministry.png'
+    }
+  ]
   constructor(private fb: FormBuilder, private eventsService: EventsService,
     private router: Router) { }
 

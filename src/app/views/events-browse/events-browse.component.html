@@ -35,31 +35,31 @@
     <ng-container *ngIf="events">
         <div class="events-container col-10">
             <ng-container *ngFor="let link of links">
-                <a class="card col-8" [href]="link.url">
+                <a class="col-2" [href]="link.url">
                     <img class="story" [src]="link.picture" alt="picture of organization">
                 </a>
             </ng-container>
-            <!-- <ng-container *ngIf="events.length > 0">
-                <ng-container *ngFor="let event of events">
-                    <mat-card  class="card col-12 my-5"
-                    (click)="this.navigate(event)">
-                        <mat-card-content>
-                            <ng-container *ngIf="event.picture; else noPicture">
-                                <img class="img-thumbnail" [src]="event.picture" alt="concert image">
-                            </ng-container>
-                            <ng-template #noPicture>
-                                <h1>{{event.title}}</h1>
-                            </ng-template>
-                            <a [href]="event.url">{{event.url}}</a>
-                        </mat-card-content>
-                    </mat-card>
-                    <ng-container *ngIf="isAdmin">
-                        <button>Approve</button>
-                        <button>Reject</button>
-                    </ng-container>
-                </ng-container>
-            </ng-container> -->
         </div>
+        <ng-container *ngIf="events.length > 0">
+            <ng-container *ngFor="let event of events">
+                <mat-card  class="card col-12 my-5"
+                (click)="this.navigate(event)">
+                    <mat-card-content>
+                        <ng-container *ngIf="event.picture; else noPicture">
+                            <img class="img-thumbnail" [src]="event.picture" alt="concert image">
+                        </ng-container>
+                        <ng-template #noPicture>
+                            <h1>{{event.title}}</h1>
+                        </ng-template>
+                        <a [href]="event.url">{{event.url}}</a>
+                    </mat-card-content>
+                </mat-card>
+                <ng-container *ngIf="isAdmin">
+                    <button>Approve</button>
+                    <button>Reject</button>
+                </ng-container>
+            </ng-container>
+        </ng-container>
     </ng-container>
 
     <!-- <h1>Top Events</h1>

@@ -56,19 +56,19 @@ export class EventsBrowseComponent implements OnInit {
       picture: '../../../assets/images/egw.png'
     },
     {
-      url: 'https://adventistbookcenter.com/',
+      url: 'https://faithfortoday.tv/',
       picture: '../../../assets/images/fft.png'
     },
     {
-      url: 'https://adventistbookcenter.com/',
+      url: 'https://www.glowonline.org/',
       picture: '../../../assets/images/glow.png'
     },
     {
-      url: 'https://adventistbookcenter.com/',
+      url: 'https://www.libertymagazine.org/',
       picture: '../../../assets/images/liberty.png'
     },
     {
-      url: 'https://adventistbookcenter.com/',
+      url: 'https://www.ministrymagazine.org/',
       picture: '../../../assets/images/ministry.png'
     }
   ]

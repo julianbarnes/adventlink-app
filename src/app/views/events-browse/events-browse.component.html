@@ -35,8 +35,8 @@
     <ng-container *ngIf="events">
         <div class="events-container col-10">
             <ng-container *ngFor="let link of links">
-                <a class="card" [href]="link.url">
-                    <img [src]="link.picture" alt="picture of organization">
+                <a class="card col-8" [href]="link.url">
+                    <img class="story" [src]="link.picture" alt="picture of organization">
                 </a>
             </ng-container>
             <!-- <ng-container *ngIf="events.length > 0">

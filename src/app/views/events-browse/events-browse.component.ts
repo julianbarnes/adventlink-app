@@ -76,7 +76,7 @@ export class EventsBrowseComponent implements OnInit {
     }
   ]
   private bibleVersePromises = [];
-  public bibleVerses;
+  public bibleVerses = [];
   
   constructor(private fb: FormBuilder, private eventsService: EventsService,
     private router: Router,
@@ -89,9 +89,11 @@ export class EventsBrowseComponent implements OnInit {
         this.bibleVersePromises.push(firstValueFrom(this.verseService.getVerse()))
       }
       Promise.all(this.bibleVersePromises).then((responses) => {
-        this.bibleVerses = responses.map(verse => verse[0])
+        responses.forEach(verse => {
+          this.bibleVerses.push(verse[0])
+        })
       })
-    }, 3000)
+    }, 1000)
     
 
     this.categoryForm = new FormControl('Worship');

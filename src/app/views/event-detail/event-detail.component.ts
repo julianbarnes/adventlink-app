@@ -3,6 +3,8 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { EventsService } from 'src/app/shared/services/events-service';
 import { switchMap } from 'rxjs/operators';
 import { EventDetails } from '../../interfaces/event-details'
+import { firstValueFrom } from 'rxjs/internal/firstValueFrom';
+import { VerseService } from 'src/app/service/verse.service';
 
 @Component({
   selector: 'app-event-detail',
@@ -10,6 +12,10 @@ import { EventDetails } from '../../interfaces/event-details'
   styleUrls: ['./event-detail.component.scss']
 })
 export class EventDetailComponent implements OnInit {
+  //Bible Verse
+  private bibleVersePromises = [];
+  public bibleVerses = [];
+  //Event
   public eventId: string;
   public event: EventDetails;
   public startDate: Date;
@@ -25,10 +31,22 @@ export class EventDetailComponent implements OnInit {
   
   constructor(
     private route: ActivatedRoute,
-    private eventsService: EventsService
+    private eventsService: EventsService,
+    private verseService: VerseService
   ) { }
 
   ngOnInit() {
+    //Bible verses 
+    //Bible verses 
+    for (let i = 0; i < 10; i++) {
+      this.bibleVersePromises.push(firstValueFrom(this.verseService.getVerse()))
+    }
+    Promise.all(this.bibleVersePromises).then((responses) => {
+      responses.forEach(verse => {
+        this.bibleVerses.push(verse[0])
+      })
+    })
+    
     this.eventId = this.route.snapshot.paramMap.get('eventId');
     this.eventsService.getEvents().subscribe((response) => {
       console.log(response)

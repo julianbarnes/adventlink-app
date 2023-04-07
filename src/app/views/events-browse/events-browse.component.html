@@ -40,6 +40,17 @@
                 </a>
             </ng-container>
         </div>
+        <div class="card verse">
+            <p>Verse</p>
+        </div>
+        <ng-container *ngIf="bibleVerses">
+            <ng-container *ngFor="let verse of bibleVerses">
+                <div class="card verse">
+                    <p>{{verse.text}}</p>
+                    <p>{{verse.bookname}} {{verse.chapter}}:{{verse.verse}}</p>
+                </div>
+            </ng-container>
+        </ng-container>
         <ng-container *ngIf="events.length > 0">
             <ng-container *ngFor="let event of events">
                 <mat-card  class="card col-12 my-5"

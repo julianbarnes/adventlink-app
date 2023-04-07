@@ -1,14 +1,10 @@
 
 <div class="flex-container">
-    <ng-container *ngIf="bibleVerses">
-        <mat-card>
-            <ng-container *ngFor="let verse of bibleVerses">
-                <div class="card verse">
-                    <p>{{verse.text}}</p>
-                    <p>{{verse.bookname}} {{verse.chapter}}:{{verse.verse}}</p>
-                </div>
-            </ng-container>
-        </mat-card>
+    <ng-container *ngIf="verse">
+        <div class="card verse">
+            <p>{{verse.text}}</p>
+            <p>{{verse.bookname}} {{verse.chapter}}:{{verse.verse}}</p>
+        </div>
     </ng-container>
 </div>
 

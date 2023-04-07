@@ -16,7 +16,14 @@ import { CategoryBarComponent } from './category-bar/category-bar.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MatChipsModule } from '@angular/material/chips';
+import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+import * as Hammer from 'hammerjs';
 
+export class MyHammerConfig extends HammerGestureConfig {
+  overrides = <any>{
+    'swipe': { direction: Hammer.DIRECTION_ALL },
+  };
+}
 
 @NgModule({
   declarations: [EventsBrowseComponent, EventDetailComponent, CategoryCardComponent, AccountComponent, CategoryBarComponent, DropdownComponent],
@@ -32,6 +39,12 @@ import { MatChipsModule } from '@angular/material/chips';
     MatButtonModule,
     SharedModule,
     MatChipsModule
+  ],
+  providers: [
+    {
+      provide: HAMMER_GESTURE_CONFIG,
+      useClass: MyHammerConfig,
+    },
   ],
   exports: [MatCardModule]
 })

@@ -10,10 +10,10 @@ import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EventDetailComponent } from '../event-detail/event-detail.component';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
-import { CategoryCardComponent } from './category-card/category-card.component';
-import { AccountComponent } from './account/account.component';
-import { CategoryBarComponent } from './category-bar/category-bar.component';
-import { DropdownComponent } from './dropdown/dropdown.component';
+import { CategoryCardComponent } from '../../shared/components/category-card/category-card.component';
+import { AccountComponent } from '../../shared/components/account/account.component';
+import { CategoryBarComponent } from '../../shared/components/category-bar/category-bar.component';
+import { DropdownComponent } from '../../shared/components/dropdown/dropdown.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MatChipsModule } from '@angular/material/chips';
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
@@ -26,7 +26,7 @@ export class MyHammerConfig extends HammerGestureConfig {
 }
 
 @NgModule({
-  declarations: [EventsBrowseComponent, EventDetailComponent, CategoryCardComponent, AccountComponent, CategoryBarComponent, DropdownComponent],
+  declarations: [EventsBrowseComponent, EventDetailComponent,CategoryCardComponent, DropdownComponent, CategoryBarComponent],
   imports: [
     CommonModule,
     MatCardModule,
@@ -37,7 +37,6 @@ export class MyHammerConfig extends HammerGestureConfig {
     ReactiveFormsModule,
     MatIconModule,
     MatButtonModule,
-    SharedModule,
     MatChipsModule
   ],
   providers: [

@@ -15,9 +15,9 @@ import { EventDetailComponent } from './views/event-detail/event-detail.componen
 import { RegisterComponent } from './views/register/register.component';
 import { EventAddComponent } from './views/event-add/event-add.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AccountComponent } from './views/events-browse/account/account.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+
 
 @NgModule({
   declarations: [
@@ -29,8 +29,6 @@ import { MatNativeDateModule } from '@angular/material/core';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule,
-    EventsBrowseModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,

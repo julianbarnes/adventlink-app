@@ -1,8 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer2 } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { EventsService } from 'src/app/shared/services/events-service';
 import { switchMap } from 'rxjs/operators';
 import { EventDetails } from '../../interfaces/event-details'
+import { firstValueFrom } from 'rxjs/internal/firstValueFrom';
+import { VerseService } from 'src/app/service/verse.service';
+import * as Hammer from 'hammerjs';
+
 
 @Component({
   selector: 'app-event-detail',
@@ -10,6 +14,12 @@ import { EventDetails } from '../../interfaces/event-details'
   styleUrls: ['./event-detail.component.scss']
 })
 export class EventDetailComponent implements OnInit {
+  //Bible Verse
+  private bibleVersePromises = [];
+  public bibleVerses;
+  public verse: any;
+  public index: number = 0;
+  //Event
   public eventId: string;
   public event: EventDetails;
   public startDate: Date;
@@ -22,13 +32,34 @@ export class EventDetailComponent implements OnInit {
   public showGoing: boolean;
   public showComments: boolean;
   public page: string;
-  
+
   constructor(
     private route: ActivatedRoute,
-    private eventsService: EventsService
+    private eventsService: EventsService,
+    private verseService: VerseService,
+    private el: ElementRef, 
+    private renderer: Renderer2
   ) { }
 
   ngOnInit() {
+    //Bible verses 
+    //Bible verses 
+    for (let i = 0; i < 10; i++) {
+      this.bibleVersePromises.push(firstValueFrom(this.verseService.getVerse()))
+    }
+    Promise.all(this.bibleVersePromises).then((responses) => {
+      if (!this.bibleVerses) {
+        this.bibleVerses = responses.map(verse => verse[0])
+      } else {
+        responses.forEach(verse => {
+          this.bibleVerses.push(verse[0])
+        })
+      }
+      this.verse = this.bibleVerses[0]
+    })
+
+    
+    
     this.eventId = this.route.snapshot.paramMap.get('eventId');
     this.eventsService.getEvents().subscribe((response) => {
       console.log(response)
@@ -56,6 +87,17 @@ export class EventDetailComponent implements OnInit {
       
     });  
   }
+
+  ngAfterViewInit() {
+    const element = this.el.nativeElement;
+    const hammer = new Hammer(element);
+    hammer.on('tap', (event) => {
+      const swipeDirection = event.direction;
+        console.log(swipeDirection)
+        this.verse = this.bibleVerses[++this.index]
+    });
+  }
+  
 
   clickShowGoing() {
     this.showGoing = !this.showGoing;

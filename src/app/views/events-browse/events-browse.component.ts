@@ -93,7 +93,7 @@ export class EventsBrowseComponent implements OnInit {
           this.bibleVerses.push(verse[0])
         })
       })
-    }, 1000)
+    }, 10000)
     
 
     this.categoryForm = new FormControl('Worship');

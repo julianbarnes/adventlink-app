@@ -71,14 +71,15 @@ h1,h2,h3,h4, p {
   gap: 2rem;
   align-items: center;
   width: 100vw;
-
-  /* height: 100vh; */
+  height: 100vh;
 }
 
 .events-container {
-  flex-direction: column;
+  flex-direction: row;
   display: flex;
   align-items: center;
+  overflow: auto;
+  white-space: nowrap;
 }
 
 .no-events {
@@ -88,9 +89,21 @@ h1,h2,h3,h4, p {
 .card {
   width: 20rem;
   height: auto;
+  display: inline-block;
+}
+
+.verse {
+  width: 80vw;
+  height: 15rem;
+  background-color: white;
 }
 
 .img-thumbnail {
   height: 30rem;
   width: 20rem;
+}
+
+.story {
+  height: 4rem;
+  width: 4rem;
 }

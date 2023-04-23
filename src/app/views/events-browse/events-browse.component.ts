@@ -3,6 +3,9 @@ import { Router } from '@angular/router';
 import { EventsService } from '../../shared/services/events-service';
 import { EventDetails } from '../../interfaces/event-details'
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { VerseService } from 'src/app/service/verse.service';
+import { lastValueFrom } from 'rxjs/internal/lastValueFrom';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-events-browse',
@@ -56,26 +59,43 @@ export class EventsBrowseComponent implements OnInit {
       picture: '../../../assets/images/egw.png'
     },
     {
-      url: 'https://adventistbookcenter.com/',
+      url: 'https://faithfortoday.tv/',
       picture: '../../../assets/images/fft.png'
     },
     {
-      url: 'https://adventistbookcenter.com/',
+      url: 'https://www.glowonline.org/',
       picture: '../../../assets/images/glow.png'
     },
     {
-      url: 'https://adventistbookcenter.com/',
+      url: 'https://www.libertymagazine.org/',
       picture: '../../../assets/images/liberty.png'
     },
     {
-      url: 'https://adventistbookcenter.com/',
+      url: 'https://www.ministrymagazine.org/',
       picture: '../../../assets/images/ministry.png'
     }
   ]
+  private bibleVersePromises = [];
+  public bibleVerses = [];
+  
   constructor(private fb: FormBuilder, private eventsService: EventsService,
-    private router: Router) { }
+    private router: Router,
+    private verseService: VerseService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    //Bible verses 
+    setInterval(() => {
+      for (let i = 0; i < 10; i++) {
+        this.bibleVersePromises.push(firstValueFrom(this.verseService.getVerse()))
+      }
+      Promise.all(this.bibleVersePromises).then((responses) => {
+        responses.forEach(verse => {
+          this.bibleVerses.push(verse[0])
+        })
+      })
+    }, 1000)
+    
+
     this.categoryForm = new FormControl('Worship');
 
     this.eventForm = this.fb.group({
@@ -88,6 +108,7 @@ export class EventsBrowseComponent implements OnInit {
       this.filterEvents();
     })
 
+    
     this.eventForm.controls['ageGroup'].valueChanges.subscribe((value) => {
       this.filterEvents('ageGroup', value)
     })
@@ -96,6 +117,8 @@ export class EventsBrowseComponent implements OnInit {
       this.filterEvents('category', value)
     })
   }
+
+  
 
   navigate(event: EventDetails) {
     this.router.navigate(['/event-detail/'+event._id], {state: {data: event}});

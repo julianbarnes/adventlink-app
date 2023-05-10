@@ -1,24 +1,4 @@
 <div class="flex-container">
-    <!-- Navbar -->
-    <!-- <mat-toolbar class="toolbar" color="accent">
-        <a>
-          <mat-icon id="menu-icon" class="primary menu-button" aria-label="Example icon-button with menu icon" class="icon">menu</mat-icon>
-        </a>
-      <h1>Profile <ng-container *ngIf="isAdmin">
-        Admin
-      </ng-container></h1>
-      <a>
-        <mat-icon class="primary icon more-icon" aria-label="Example icon-button with share icon">more_vert</mat-icon>
-      </a>
-    </mat-toolbar>
-    Profile
-    <app-account></app-account>
-    Stats -->
-    <!-- <div class="stat-bar row">
-        <div class="box">140 Events</div>
-        <div class="box">24k Followers</div>
-        <div class="box">1,9000 Following</div>
-    </div> -->
     <h1 class="mt-3">Adventlink</h1>
     <button (click)="this.navigateToAdd()" mat-fab matTooltip="Warn" class="col-4" color="warn" aria-label="Example fab with a heart icon">
         <mat-icon>add</mat-icon>
@@ -40,14 +20,6 @@
                 </a>
             </ng-container>
         </div>
-        <!-- <ng-container *ngIf="bibleVerses">
-            <ng-container *ngFor="let verse of bibleVerses">
-                <div class="card verse">
-                    <p>{{verse.text}}</p>
-                    <p>{{verse.bookname}} {{verse.chapter}}:{{verse.verse}}</p>
-                </div>
-            </ng-container>
-        </ng-container> -->
         <ng-container *ngIf="events.length > 0">
             <ng-container *ngFor="let event of events">
                 <mat-card  class="card col-12 my-5"

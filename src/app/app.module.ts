@@ -17,13 +17,21 @@ import { EventAddComponent } from './views/event-add/event-add.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { SideMenuComponent } from './views/side-menu/side-menu.component';
+import { CategoryBrowseComponent } from './views/category-browse/category-browse.component';
+import { CollageBrowseComponent } from './views/collage-browse/collage-browse.component';
+import { LocationBrowseComponent } from './views/location-browse/location-browse.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    EventAddComponent
+    EventAddComponent,
+    SideMenuComponent,
+    CategoryBrowseComponent,
+    CollageBrowseComponent,
+    LocationBrowseComponent
   ],
   imports: [
     BrowserModule,

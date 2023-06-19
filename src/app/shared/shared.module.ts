@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component'
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
@@ -12,12 +12,7 @@ import { CategoryBarComponent } from './components/category-bar/category-bar.com
 
 @NgModule({
   declarations: [NavBarComponent, ProfileCardComponent, AccountComponent],
-  imports: [
-    CommonModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatCardModule
-  ],
-  exports: [ NavBarComponent, MatIconModule, MatToolbarModule, AccountComponent]
+  imports: [CommonModule, MatIconModule, MatToolbarModule, MatCardModule],
+  exports: [NavBarComponent, MatIconModule, MatToolbarModule, AccountComponent],
 })
-export class SharedModule { }
+export class SharedModule {}

@@ -9,7 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EventDetailComponent } from '../event-detail/event-detail.component';
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { CategoryCardComponent } from '../../shared/components/category-card/category-card.component';
 import { AccountComponent } from '../../shared/components/account/account.component';
 import { CategoryBarComponent } from '../../shared/components/category-bar/category-bar.component';
@@ -21,12 +21,18 @@ import * as Hammer from 'hammerjs';
 
 export class MyHammerConfig extends HammerGestureConfig {
   overrides = <any>{
-    'swipe': { direction: Hammer.DIRECTION_ALL },
+    swipe: { direction: Hammer.DIRECTION_ALL },
   };
 }
 
 @NgModule({
-  declarations: [EventsBrowseComponent, EventDetailComponent,CategoryCardComponent, DropdownComponent, CategoryBarComponent],
+  declarations: [
+    EventsBrowseComponent,
+    EventDetailComponent,
+    CategoryCardComponent,
+    DropdownComponent,
+    CategoryBarComponent,
+  ],
   imports: [
     CommonModule,
     MatCardModule,
@@ -37,7 +43,7 @@ export class MyHammerConfig extends HammerGestureConfig {
     ReactiveFormsModule,
     MatIconModule,
     MatButtonModule,
-    MatChipsModule
+    MatChipsModule,
   ],
   providers: [
     {
@@ -45,6 +51,6 @@ export class MyHammerConfig extends HammerGestureConfig {
       useClass: MyHammerConfig,
     },
   ],
-  exports: [MatCardModule]
+  exports: [MatCardModule],
 })
-export class EventsBrowseModule { }
+export class EventsBrowseModule {}

@@ -1,7 +1,7 @@
 
 <div class="flex-container">
     <mat-card *ngIf="this.event">
-        <img class="img-fluid" [src]="event.picture" alt="concert image">
+        <img class="img-fluid rounded mx-auto d-block col-6" [src]="event.picture" alt="concert image">
         <mat-card-title><h1 class="title">{{event.title}}</h1></mat-card-title>
         <mat-card-content>
             <p>{{event.description}}</p>

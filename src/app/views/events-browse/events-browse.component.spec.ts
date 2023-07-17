@@ -8,9 +8,8 @@ describe('EventsBrowseComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EventsBrowseComponent ]
-    })
-    .compileComponents();
+      declarations: [EventsBrowseComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,7 +20,5 @@ describe('EventsBrowseComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-
-    
   });
 });

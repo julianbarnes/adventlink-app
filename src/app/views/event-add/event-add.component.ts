@@ -5,12 +5,12 @@ import { EventsService } from 'src/app/shared/services/events-service';
 @Component({
   selector: 'app-event-add',
   templateUrl: './event-add.component.html',
-  styleUrls: ['./event-add.component.scss']
+  styleUrls: ['./event-add.component.scss'],
 })
 export class EventAddComponent implements OnInit {
-  public eventForm: FormGroup
-  public file: File
-  constructor(private fb: FormBuilder, private eventsService: EventsService, private router: Router) { }
+  public eventForm: FormGroup;
+  public file: File;
+  constructor(private fb: FormBuilder, private eventsService: EventsService, private router: Router) {}
 
   ngOnInit() {
     this.eventForm = this.fb.group({
@@ -19,28 +19,31 @@ export class EventAddComponent implements OnInit {
       url: [''],
       startDate: [''],
       endDate: [''],
-      location: [''], 
-      picture: ['']
-    })
+      location: [''],
+      picture: [''],
+    });
   }
 
   save() {
-    console.log(this.file)
+    console.log(this.file);
     //convert date to utc
     this.eventForm.value['startDate'] = this.convertToUtc(this.eventForm.value['startDate']);
     this.eventForm.value['endDate'] = this.convertToUtc(this.eventForm.value['endDate']);
-    this.eventsService.addEvent(this.eventForm.value, this.file).subscribe((response) => {
-      console.log(response)
-      this.navigateToEvents()
-    }, (error: any) => {
-      alert("There was an error")
-    })
+    this.eventsService.addEvent(this.eventForm.value, this.file).subscribe(
+      (response) => {
+        console.log(response);
+        this.navigateToEvents();
+      },
+      (error: any) => {
+        alert('There was an error');
+      }
+    );
   }
 
   fileChosen(event: any) {
     if (event.target.value) {
-      this.file = <File>event.target.files[0]
-      console.log(event.target.files)
+      this.file = <File>event.target.files[0];
+      console.log(event.target.files);
     }
   }
 
@@ -53,7 +56,7 @@ export class EventAddComponent implements OnInit {
    * @returns Date
    */
   private convertToUtc(date: Date) {
-    let estDate = new Date(date)
-    return estDate.toUTCString()
+    let estDate = new Date(date);
+    return estDate.toUTCString();
   }
 }

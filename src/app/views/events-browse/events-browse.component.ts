@@ -93,16 +93,6 @@ export class EventsBrowseComponent implements OnInit {
 
   async ngOnInit() {
     //Bible verses
-    setInterval(() => {
-      for (let i = 0; i < 10; i++) {
-        this.bibleVersePromises.push(firstValueFrom(this.verseService.getVerse()));
-      }
-      Promise.all(this.bibleVersePromises).then((responses) => {
-        responses.forEach((verse) => {
-          this.bibleVerses.push(verse[0]);
-        });
-      });
-    }, 10000);
 
     this.categoryForm = new FormControl('Worship');
 

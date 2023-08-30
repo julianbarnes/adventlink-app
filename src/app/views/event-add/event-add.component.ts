@@ -9,6 +9,7 @@ import { EventsService } from 'src/app/shared/services/events-service';
 })
 export class EventAddComponent implements OnInit {
   public eventForm: FormGroup;
+  public isEvent: boolean;
   public file: File;
   constructor(private fb: FormBuilder, private eventsService: EventsService, private router: Router) {}
 
@@ -22,6 +23,10 @@ export class EventAddComponent implements OnInit {
       location: [''],
       picture: [''],
     });
+  }
+
+  toggleSelection(group: string): void {
+    this.isEvent = group === 'Event' ? true : false;
   }
 
   save() {

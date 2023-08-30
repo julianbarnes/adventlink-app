@@ -30,6 +30,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatChipsModule,
   ],
   providers: [EventsService],
   bootstrap: [AppComponent],
